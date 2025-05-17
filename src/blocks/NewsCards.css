@@ -1,0 +1,78 @@
+.newscards-section {
+  background-color: rgba(245, 246, 247, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 80px 0;
+}
+
+.newscards-section__header {
+  display: flex;
+  flex-direction: row;
+  /* height: 56px; */
+  align-items: center;
+  gap: 20px;
+  max-width: 1232px;
+  margin: 0 auto;
+  width: 100%;
+}
+.newscards-section__add-btn {
+  border: none;
+  background-color: transparent;
+
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.newscards-section__title {
+  font-family: Cabinet Grotesk, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.newscards-section__items {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0;
+  /* padding: 80px 104px; */
+
+  justify-content: center;
+  list-style-type: none;
+}
+.newscards__search-title {
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+.show__more_cards-btn {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px 98px 20px 98px;
+  border: none;
+  border-radius: 80px;
+  /* display: block; */
+  margin: 56px auto 0 auto;
+  width: 288px;
+  background-color: rgba(232, 232, 232, 1);
+  color: rgba(26, 27, 34, 1);
+}
+
+@media screen and (max-width: 1231px) {
+  .newscards-section__header {
+    max-width: 816px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .newscards-section__header {
+    max-width: 700px;
+  }
+}

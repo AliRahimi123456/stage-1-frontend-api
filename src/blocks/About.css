@@ -1,0 +1,50 @@
+.about {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 56px;
+  padding: 80px 80px 216px 104px;
+}
+.about__image {
+  width: 464px;
+  height: 464px;
+  object-fit: cover;
+  border-radius: 1000px;
+}
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+.about__author {
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: rgba(26, 27, 34, 1);
+
+  margin: 0 0 16px;
+  text-align: center;
+  text-align: start;
+}
+.about__author-paragraph {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  max-width: 600px;
+  line-height: 24px;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .about__image {
+    width: 232px;
+    height: 232px;
+    border-radius: 1000px;
+  }
+  .about {
+    gap: 32px;
+    padding: 40px 40px 61px 40px;
+  }
+}
