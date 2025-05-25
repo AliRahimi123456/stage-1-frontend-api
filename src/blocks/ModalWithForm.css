@@ -16,16 +16,18 @@
 }
 .modal__close {
   position: absolute;
-  background-image: url(../assets/close-light-icon.png);
-  top: 20px;
-  right: 28px;
+  background-image: url(../assets/close-icon.svg);
+  top: -33px;
+  right: -17px;
   cursor: pointer;
   background-repeat: no-repeat;
   border: none;
   background-color: transparent;
-  width: 14px;
-  height: 14px;
+  width: 13.54px;
+
+  height: 22.36px;
   background-position: center;
+  color: rgba(255, 255, 255, 1);
 }
 .modal__content {
   background-color: #fff;
@@ -34,7 +36,9 @@
   border-radius: 16px;
   max-width: 430px;
   box-sizing: border-box;
-  width: 100%;
+  width: 430px;
+  height: 380px;
+  top: 147px;
 }
 .modal__form {
   display: flex;
@@ -85,4 +89,14 @@
   font-size: 14px;
   border: none;
   background-color: transparent;
+}
+
+@media screen and (max-width: 530px) {
+  .modal__content {
+    width: 100%;
+  }
+  .modal__close {
+    top: -47px;
+    right: 14px;
+  }
 }

@@ -3,24 +3,39 @@ import { useLocation, Link } from "react-router-dom";
 import "../../blocks/Header.css";
 import SearchForm from "../SearchForm/SearchForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import logouticon from "../../assets/header/icon/logout.png";
+import NavMenu from "../NavMenu/NavMenu";
+import logouticonwhite from "../../assets/logout-white-icon.svg";
+import logouticon from "../../assets/logout-black-icon.svg";
 
-function Header({ onLoginClick, currentUser, handleLogout, onSearch }) {
+function Header({
+  onLoginClick,
+  currentUser,
+  handleLogout,
+  onSearch,
+  handleMenuBtnClick,
+}) {
   const location = useLocation();
   console.log(location);
+  const isHome = location.pathname === "/";
 
   return (
-    <header className="header">
-      <nav className="header__links">
+    <header className={`header ${isHome ? "" : "header__saved-articles"}`}>
+      <nav
+        className={`header__links ${isHome ? "" : "header__links_theme_light"}`}
+      >
         <div className="header__logo">NewsExplorer</div>
+        <button
+          className={`header__menu-btn ${!isHome && "header__menu_black"}`}
+          onClick={handleMenuBtnClick}
+        ></button>
 
         <div className="header__btns">
           <Link
             to="/"
             className={`header__link ${
-              location.pathname === "/"
+              isHome
                 ? "header__link_active"
-                : "header__link_location_savednews"
+                : "header__link_location_savednews header__link_theme_light"
             }`}
           >
             Home
@@ -28,21 +43,24 @@ function Header({ onLoginClick, currentUser, handleLogout, onSearch }) {
 
           {currentUser ? (
             <>
-              <a
-                href="/saved-news"
+              <Link
+                to="/saved-news"
                 className={`header__link ${
-                  location.pathname === "/saved-news"
-                    ? "header__link_active"
-                    : ""
+                  isHome ? "" : "header__link_active header__link_theme_light"
                 }`}
               >
                 Saved articles
-              </a>
-              <button className="header__btn" onClick={handleLogout}>
+              </Link>
+              <button
+                className={`header__btn ${
+                  isHome ? "" : "header__btn_theme_light"
+                }`}
+                onClick={handleLogout}
+              >
                 Elise
                 <img
                   className="header__signout_image"
-                  src={logouticon}
+                  src={isHome ? logouticonwhite : logouticon}
                   alt="logout"
                 />
               </button>
@@ -54,12 +72,16 @@ function Header({ onLoginClick, currentUser, handleLogout, onSearch }) {
           )}
         </div>
       </nav>
-      <h1 className="header__title">What's going on in the world?</h1>
-      <p className="header__text">
-        Find the latest news on any topic and save them in your personal
-        account.
-      </p>
-      <SearchForm onSearch={onSearch} />
+      {isHome ? (
+        <>
+          <h1 className="header__title">What's going on in the world?</h1>
+          <p className="header__text">
+            Find the latest news on any topic and save them in your personal
+            account.
+          </p>
+          <SearchForm onSearch={onSearch} />
+        </>
+      ) : null}
     </header>
   );
 }

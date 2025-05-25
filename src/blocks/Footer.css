@@ -21,7 +21,7 @@
 .footer__right {
   display: flex;
   gap: 16px;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .footer__icon {
@@ -32,10 +32,30 @@
 
 .footer__btn {
   background-color: transparent;
-  padding: 6px 12px;
+  padding: 0;
   cursor: pointer;
   border: none;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 20px 16px;
+    align-items: stretch;
+  }
+}
+@media screen and (max-width: 616px) {
+  .footer__btns-container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: auto;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+    padding: 20px 16px 22px 16px;
+    gap: 38px;
+  }
 }

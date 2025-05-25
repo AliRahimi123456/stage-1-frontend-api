@@ -9,8 +9,11 @@ function Footer() {
         @2025 Supersite, Powered by News API
       </div>
       <div className="footer__right">
-        <button className="footer__btn">TripleTen</button>
-        <button className="footer__btn">Home</button>
+        <div className="footer__btns-container">
+          <button className="footer__btn">TripleTen</button>
+          <button className="footer__btn">Home</button>
+        </div>
+
         <img src={facebook} alt="facebook" className="footer__icon" />
         <img src={github} alt="github" className="footer__icon" />
       </div>

@@ -8,6 +8,13 @@
   background-image: url(../assets/background-image.png);
   padding: 0 0 28px;
 }
+
+.header__saved-articles {
+  background-color: #fff;
+  background-image: none;
+  border-bottom: 1px solid rgba(209, 210, 214, 1);
+  padding: 0;
+}
 .header__btns {
   display: flex;
   gap: 19px;
@@ -16,7 +23,6 @@
   border-radius: 16px;
 }
 .header__logo {
-  /* margin-left: 104px; */
   font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -30,9 +36,16 @@
   margin-right: 0;
   padding: 0px 104px;
   height: 80px;
+  background-color: transparent;
+  color: white;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+.header__links_theme_light {
+  background-color: white;
+  color: black;
+}
+
 .header__link {
   align-self: stretch;
   text-decoration: none;
@@ -43,7 +56,7 @@
   vertical-align: middle;
   border: none;
   background-color: transparent;
-  color: #fff;
+  color: inherit;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -51,14 +64,18 @@
 }
 
 .header__link_active {
-  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  border-bottom: 3px solid rgba(255, 255, 255, 1);
   height: 80px;
   margin-right: 66px;
+}
+.header__link_theme_light {
+  border-color: black;
 }
 .header__btn {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   display: flex;
   gap: 19px;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
   background-color: transparent;
@@ -74,7 +91,12 @@
 }
 .header__signout_image {
   width: 24px;
-  background-color: rgba(255, 255, 255, 1);
+  /* background-color: rgba(255, 255, 255, 1); */
+}
+.header__btn_theme_light {
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 .header__title {
   text-align: center;
@@ -83,16 +105,20 @@
   font-size: 18px;
   margin-bottom: 32px;
 }
+
 .header__text {
   text-align: center;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400px;
   font-size: 18px;
 }
+.header__menu-btn {
+  display: none;
+}
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 20px;
+    padding: 16px;
     background-size: cover;
   }
   .header__links {
@@ -115,6 +141,7 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+
   .header__btn {
     font-size: 16px;
     margin-top: 14px;
@@ -133,5 +160,25 @@
   }
   .header__logo {
     margin: 22px auto 18px 40px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .header__logo {
+    margin: 16px auto 16px 16px;
+  }
+  .header__btns {
+    display: none;
+  }
+  .header__menu-btn {
+    background-image: url(../assets/menu-icon.svg);
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    display: block;
+  }
+  .header__menu_black {
+    background-image: url(../assets/menu-icon-black.svg);
   }
 }

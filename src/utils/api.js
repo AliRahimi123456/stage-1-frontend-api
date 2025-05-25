@@ -33,14 +33,22 @@ export function getNewsArticles(searchTerm) {
     },
   });
 }
+export function deleteArticle(articleId) {
+  return new Promise((resolve) => {
+    console.log(`Fake delete article with id: ${articleId}`);
+    resolve({ message: "Article deleted (fake)" });
+  });
+}
 
 export function saveArticle(article) {
   return new Promise((resolve) => {
     resolve({
       _id: "65f7371e7bce9e7d331b11a0",
-      url: article.url,
-      title: article.title,
-      imageUrl: article.imageUrl,
+      ...article,
+      // url: article.url,
+      // title: article.title,
+      // imageUrl: article.imageUrl,
+      // publishedAt: article.publishedAt,
     });
   });
 }

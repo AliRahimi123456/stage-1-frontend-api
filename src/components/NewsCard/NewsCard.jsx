@@ -1,29 +1,14 @@
 import { useContext } from "react";
 import { CurrentUserContext } from "../../utils/context/CurrentUser";
 import "../../blocks/NewsCard.css";
+import { useLocation } from "react-router-dom";
 
-function NewsCard({ item, onCardClick, handleCardSave }) {
+function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
   const currentUser = useContext(CurrentUserContext);
-
-  // const handleCardClick = () => {
-  //   onCardClick(item);
-  // };
-
-  // function isLiked(value, array) {
-  //   return Array.isArray(array) && array.includes(value);
-  // }
+  const location = useLocation();
   const handleSaveClick = () => {
     handleCardSave(item);
   };
-  //
-
-  // const toggleLike = () => {
-  //   handleCardLike({
-  //     _id: item._id,
-  //     isLiked: isLiked(currentUser?._id, item.likes),
-  //   });
-  // };
-
   const publishedDate = new Date(item.publishedAt);
   const formattedDate = publishedDate.toLocaleString("en-US", {
     month: "long",
@@ -31,18 +16,21 @@ function NewsCard({ item, onCardClick, handleCardSave }) {
     day: "numeric",
   });
 
+  const isHome = location.pathname === "/";
+
   return (
     <li className="newscard">
-      <div className="newscard__save-container">
-        {/* {currentUser && (
-          // <button onClick={handleSaveClick} className="newscard__save-button">
-          //   Save
-          // </button>
-        )} */}
-      </div>
+      <div className="newscard__save-container"></div>
       <img className="newscard__image" src={item.urlToImage} alt={item.name} />
-
-      <button className="newscard__save-btn" onClick={handleSaveClick}></button>
+      {location.pathname === "/saved-news" && (
+        <div className="newscard__keyword">{item.keyword}</div>
+      )}
+      <button
+        className={`newscard__save-btn ${
+          location.pathname === "/saved-news" ? "newscard__save-btn_trash" : ""
+        }`}
+        onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
+      ></button>
 
       <div className="newscard__container">
         <time className="newscard__date" dateTime={publishedDate.toISOString()}>

@@ -10,7 +10,7 @@ function About() {
 
         <div className="about__text">
           <h1 className="about__author">About the author</h1>
-          <p className="about__author-paragraph">
+          <div className="about__author-paragraph">
             <p className="about__author-paragraph">
               My experience in coding has been an exciting journey of learning
               and discovery.
@@ -31,7 +31,7 @@ function About() {
               Coding has not only improved my technical skills but also
               strengthened my problem-solving and critical thinking abilities.
             </p>
-          </p>
+          </div>
         </div>
       </div>
       {/* <Footer /> */}

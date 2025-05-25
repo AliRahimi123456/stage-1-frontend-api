@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../../blocks/ModalWithForm.css";
 
 function ModalWithForm({
@@ -12,6 +13,20 @@ function ModalWithForm({
     e.preventDefault();
     onSubmit(e);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      // disable the background scroll on the dom
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  });
+
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content">
