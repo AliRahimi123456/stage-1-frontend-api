@@ -5,7 +5,7 @@
   justify-content: center;
   padding: 40px;
   gap: 56px;
-  padding: 80px 80px 216px 104px;
+  padding: 80px 80px 61px 104px;
 }
 .about__image {
   width: 464px;
@@ -48,6 +48,9 @@
     gap: 32px;
     padding: 40px 40px 61px 40px;
   }
+  .about__author {
+    font-size: 30px;
+  }
 }
 @media screen and (max-width: 520px) {
   .about__image {
@@ -66,3 +69,6 @@
     font-size: 30px;
   }
 }
+/* * {
+  outline: 1px solid red;
+} */

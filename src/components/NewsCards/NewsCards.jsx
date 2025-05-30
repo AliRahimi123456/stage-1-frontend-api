@@ -46,7 +46,7 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
 
       {visibleCount < cards.length && (
         <button
-          className="newsCards-section show__more_cards-btn"
+          className="newsCards-section newscards__show-more-cards-btn"
           onClick={handleShowMore}
         >
           Show More

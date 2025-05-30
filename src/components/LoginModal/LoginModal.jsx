@@ -55,7 +55,7 @@ const LoginModal = ({ onClose, handleLogin, isOpen, onSignUpClick }) => {
             !isValid ? "modal__primary-btn_disabled" : ""
           }`}
         >
-          Log In
+          Sign in
         </button>
         <button
           className="modal__secondary-btn"

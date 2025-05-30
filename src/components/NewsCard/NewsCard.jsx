@@ -9,6 +9,7 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
   const handleSaveClick = () => {
     handleCardSave(item);
   };
+  console.log(item);
   const publishedDate = new Date(item.publishedAt);
   const formattedDate = publishedDate.toLocaleString("en-US", {
     month: "long",
@@ -38,6 +39,7 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
         </time>
         <h2 className="newscard__title">{item.title}</h2>
         <p className="newscard__description">{item.description}</p>
+        <p className="newscard__source">{item.source.name}</p>
       </div>
     </li>
   );

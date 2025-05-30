@@ -85,7 +85,6 @@
   display: flex;
   align-items: center;
   padding-left: 15px;
-  /* margin-right: 64px; */
 }
 .nav-menu__logout-btn {
   background: transparent;

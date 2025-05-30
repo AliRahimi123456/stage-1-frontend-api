@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 21px 104px;
   background-color: transparent;
   color: white;
   position: relative;
@@ -17,11 +17,18 @@
   font-size: 14px;
   color: #333;
 }
+.footer__image-container {
+  display: flex;
+  gap: 24px;
+}
 
 .footer__right {
   display: flex;
-  gap: 16px;
-  /* align-items: center; */
+  gap: 40px;
+}
+.footer__btns-container {
+  display: flex;
+  gap: 40px;
 }
 
 .footer__icon {
@@ -38,6 +45,7 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
+  color: rgba(26, 27, 34, 1);
 }
 @media screen and (max-width: 768px) {
   .footer {
@@ -51,7 +59,6 @@
     flex-direction: column-reverse;
     margin-right: auto;
     align-items: flex-start;
-    gap: 18px;
   }
   .footer {
     flex-direction: column-reverse;

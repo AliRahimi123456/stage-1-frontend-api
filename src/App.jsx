@@ -55,7 +55,6 @@ function App() {
         setSavedCards([...savedCards, newArticle]);
       });
 
-      // Force a re-render to see the change
       setTimeout(() => {
         console.log("savedCards after timeout:", savedCards);
       }, 2000);
@@ -137,7 +136,7 @@ function App() {
   };
 
   const handleMenuBtnClick = () => {
-    setIsMenuOpen(true); //Opening Menu
+    setIsMenuOpen(true);
   };
 
   const handleCloseMenu = () => {
@@ -146,7 +145,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={user}>
-      <>
+      <div className="page">
         <Header
           onLoginClick={onLogInClick}
           handleLogin={handleLogin}
@@ -203,7 +202,7 @@ function App() {
         />
 
         <Footer />
-      </>
+      </div>
     </CurrentUserContext.Provider>
   );
 }

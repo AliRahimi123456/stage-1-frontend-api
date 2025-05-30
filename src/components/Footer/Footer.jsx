@@ -10,12 +10,28 @@ function Footer() {
       </div>
       <div className="footer__right">
         <div className="footer__btns-container">
-          <button className="footer__btn">TripleTen</button>
-          <button className="footer__btn">Home</button>
+          <a
+            href="https://tripleten.com/"
+            className="footer__btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TripleTen
+          </a>
+          <a href="/" className="footer__btn">
+            Home
+          </a>
         </div>
-
-        <img src={facebook} alt="facebook" className="footer__icon" />
-        <img src={github} alt="github" className="footer__icon" />
+        <div className="footer__image-container">
+          <img src={facebook} alt="facebook" className="footer__icon" />
+          <a
+            href="https://github.com/AliRahimi123456?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={github} alt="github" className="footer__icon" />
+          </a>
+        </div>
       </div>
     </footer>
   );
