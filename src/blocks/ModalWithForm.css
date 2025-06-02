@@ -17,8 +17,6 @@
 .modal__close {
   position: absolute;
   background-image: url(../assets/close-icon.svg);
-  /* top: -33px;
-  right: -17px; */
   bottom: calc(100% + 8px);
   left: calc(100% + 8px);
   cursor: pointer;
@@ -36,7 +34,6 @@
 .modal__content {
   background-color: #fff;
   position: relative;
-  /* padding: 28px 28px 36px; */
   padding-top: 34px;
   padding-bottom: 22px;
   padding-left: 36px;
@@ -45,7 +42,7 @@
   max-width: 430px;
   box-sizing: border-box;
   width: 430px;
-  height: 380px;
+  /* height: 380px; */
   top: 147px;
 }
 .modal__form {
@@ -94,6 +91,9 @@
   padding: 20px;
   border: none;
 }
+.modal__primary-btn_disabled {
+  background-color: gray;
+}
 .modal__secondary-btn {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -105,9 +105,16 @@
 @media screen and (max-width: 530px) {
   .modal__content {
     width: 100%;
+    top: 12px;
   }
   .modal__close {
-    top: -47px;
-    right: 14px;
+    top: -40px;
+    right: 16px;
+    height: 24px;
+    width: 24px;
+    bottom: unset;
+    left: unset;
+  }
+  .modal__content {
   }
 }

@@ -5,10 +5,6 @@
   justify-content: center;
   margin: 0;
   padding: 80px 104px 80px 104px;
-  /* padding-top: 80px;
-  padding-left: 104px;
-  padding-right: 104px;
-  margin-bottom: 64px; */
 }
 
 .newscards-section__header {
@@ -17,7 +13,6 @@
   font-size: 40px;
   display: flex;
   flex-direction: row;
-  /* height: 56px; */
   align-items: center;
   gap: 20px;
   max-width: 1232px;
@@ -48,8 +43,6 @@
   gap: 16px;
   padding: 0;
   margin: 0;
-  /* padding: 80px 104px; */
-
   justify-content: center;
   list-style-type: none;
 }
@@ -69,7 +62,6 @@
   padding: 20px 98px 20px 98px;
   border: none;
   border-radius: 80px;
-  /* display: block; */
   margin: 56px auto 0 auto;
   width: 288px;
   background-color: #fff;
@@ -111,9 +103,6 @@
     max-width: 288px;
     font-size: 30px;
   }
-  /* .newscards-section {
-    margin: 32px 16px 58px 16px;
-  } */
   .newscards__search-title {
     font-size: 30px;
   }

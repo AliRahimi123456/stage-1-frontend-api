@@ -86,7 +86,7 @@ function App() {
       .catch((error) => console.error("Error fetching news articles:", error));
   };
 
-  const onLogInClick = () => {
+  const onLoginClick = () => {
     setActiveModal("login-modal");
     handleCloseMenu();
   };
@@ -147,12 +147,13 @@ function App() {
     <CurrentUserContext.Provider value={user}>
       <div className="page">
         <Header
-          onLoginClick={onLogInClick}
+          onLoginClick={onLoginClick}
           handleLogin={handleLogin}
           currentUser={user}
           handleLogout={handleLogout}
           onSearch={handleSearchSubmit}
           handleMenuBtnClick={handleMenuBtnClick}
+          isOpen={activeModal !== ""}
         />
 
         <Routes>
@@ -184,7 +185,7 @@ function App() {
           isOpen={activeModal === "register-modal"}
           onClose={closeActiveModal}
           onRegister={handleRegister}
-          onLogInClick={onLogInClick}
+          onLogInClick={onLoginClick}
         />
 
         <LoginModal
@@ -197,7 +198,7 @@ function App() {
         <NavMenu
           isOpen={isMenuOpen}
           onClose={handleCloseMenu}
-          onSignInClick={onLogInClick}
+          onSignInClick={onLoginClick}
           handleLogout={handleLogout}
         />
 

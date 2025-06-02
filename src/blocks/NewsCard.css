@@ -2,15 +2,12 @@
   width: 400px;
   height: 576px;
   position: relative;
-  /* display: flex; */
   justify-content: center;
   margin-bottom: 12px;
   background-color: #fff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-
-  /* margin-left: 104px; */
 }
 .newscard__container {
   padding: 20px 24px 24px;

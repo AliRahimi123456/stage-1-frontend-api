@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../blocks/RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const RegisterModal = ({ onClose, onRegister, isOpen, onSignUpClick }) => {
+const RegisterModal = ({ onClose, onRegister, isOpen, onLogInClick }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,17 +23,6 @@ const RegisterModal = ({ onClose, onRegister, isOpen, onSignUpClick }) => {
       onSubmit={handleSubmit}
       onClose={onClose}
     >
-      {/* <label className="modal__label">
-        Avatar URL
-        <input
-        
-          className="modal__input"
-          type="text"
-          placeholder="Avatar URL"
-          value={avatar}
-          onChange={(e) => setAvatar(e.target.value)}
-        />
-      </label> */}
       <label className="modal__label">
         Email
         <input
@@ -70,7 +59,6 @@ const RegisterModal = ({ onClose, onRegister, isOpen, onSignUpClick }) => {
       <div className="modal__button-container">
         <button
           type="submit"
-          // className="modal__primary-btn"
           className={`modal__primary-btn ${
             !isValid ? "modal__primary-btn_disabled" : ""
           }`}
@@ -80,7 +68,7 @@ const RegisterModal = ({ onClose, onRegister, isOpen, onSignUpClick }) => {
         <button
           className="modal__secondary-btn"
           type="button"
-          onClick={onSignUpClick}
+          onClick={onLogInClick}
         >
           or Sign In
         </button>

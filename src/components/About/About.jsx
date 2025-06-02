@@ -1,6 +1,5 @@
 import "../../blocks/About.css";
 import avatarImage from "../../assets/avatar-image.png";
-// import Footer from "../Footer/Footer";
 
 function About() {
   return (

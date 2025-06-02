@@ -50,7 +50,6 @@ const LoginModal = ({ onClose, handleLogin, isOpen, onSignUpClick }) => {
       <div className="modal__button-container">
         <button
           type="submit"
-          // className="modal__primary-btn"
           className={`modal__primary-btn ${
             !isValid ? "modal__primary-btn_disabled" : ""
           }`}

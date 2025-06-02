@@ -13,6 +13,7 @@ function Header({
   handleLogout,
   onSearch,
   handleMenuBtnClick,
+  isOpen,
 }) {
   const location = useLocation();
   console.log(location);
@@ -24,10 +25,12 @@ function Header({
         className={`header__links ${isHome ? "" : "header__links_theme_light"}`}
       >
         <div className="header__logo">NewsExplorer</div>
-        <button
-          className={`header__menu-btn ${!isHome && "header__menu_black"}`}
-          onClick={handleMenuBtnClick}
-        ></button>
+        {!isOpen && (
+          <button
+            className={`header__menu-btn ${!isHome && "header__menu_black"}`}
+            onClick={handleMenuBtnClick}
+          ></button>
+        )}
 
         <div className="header__btns">
           <Link
