@@ -28,7 +28,9 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
       )}
       <button
         className={`newscard__save-btn ${
-          location.pathname === "/saved-news" ? "newscard__save-btn_trash" : ""
+          location.pathname === "/saved-news"
+            ? "newscard__save-btn_trash newscard__save_black_trash_btn"
+            : "newscard__save-btn_home"
         }`}
         onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
       ></button>

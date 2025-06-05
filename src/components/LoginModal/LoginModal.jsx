@@ -47,6 +47,7 @@ const LoginModal = ({ onClose, handleLogin, isOpen, onSignUpClick }) => {
           }}
         />
       </label>
+
       <div className="modal__button-container">
         <button
           type="submit"
@@ -64,10 +65,6 @@ const LoginModal = ({ onClose, handleLogin, isOpen, onSignUpClick }) => {
           or Sign Up
         </button>
       </div>
-
-      {/* <button type="button" onclick={onClose}>
-          Cancel
-        </button> */}
     </ModalWithForm>
   );
 };

@@ -1,4 +1,4 @@
-.newscards-section {
+.newscards {
   background-color: rgba(245, 246, 247, 1);
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   padding: 80px 104px 80px 104px;
 }
 
-.newscards-section__header {
+.newscards__header {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
@@ -28,12 +28,12 @@
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
 }
-.newscards-section__title {
+.newscards__title {
   font-family: Cabinet Grotesk, sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
-.newscards-section__items {
+.newscards__list {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -45,8 +45,9 @@
   margin: 0;
   justify-content: center;
   list-style-type: none;
+  padding: 62px 0;
 }
-.newscards__search-title {
+.newscards__title_type_search {
   font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
@@ -72,38 +73,42 @@
 }
 
 @media screen and (max-width: 1231px) {
-  .newscards-section__header {
+  .newscards__header {
     max-width: 816px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .newscards-section__header {
+  .newscards__header {
     max-width: 700px;
     font-size: 30px;
   }
-  .newscards__search-title {
+  .newscards__title {
     font-size: 30px;
   }
-  .newscards-section {
+  .newscards {
     padding: 40px;
     padding-right: 16px;
     padding-left: 16px;
     margin: 0;
   }
-  .newscards-section__items {
+  .newscards__list {
     gap: 8px;
+    padding: 32px 0;
   }
   .newscards__show-more-cards-btn {
     width: 288px;
   }
 }
 @media screen and (max-width: 530px) {
-  .newscards-section__header {
+  .newscards__header {
     max-width: 288px;
     font-size: 30px;
   }
-  .newscards__search-title {
+  .newscards__title {
     font-size: 30px;
+  }
+  .newscards__list {
+    padding: 22px 0;
   }
 }

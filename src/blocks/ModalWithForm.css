@@ -43,7 +43,7 @@
   box-sizing: border-box;
   width: 430px;
   /* height: 380px; */
-  top: 147px;
+  /* top: 147px; */
 }
 .modal__form {
   display: flex;
@@ -80,6 +80,15 @@
   align-items: stretch;
   gap: 16px;
 }
+.modal__signin-btn {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(47, 113, 229, 1);
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
 .modal__primary-btn {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   border-radius: 1000px;
@@ -105,8 +114,17 @@
 @media screen and (max-width: 530px) {
   .modal__content {
     width: 100%;
-    top: 12px;
+    position: absolute;
+    top: 57px;
+    bottom: 0;
+    border-radius: 0;
+    padding: 16px 16px;
   }
+  .modal__title {
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
   .modal__close {
     top: -40px;
     right: 16px;
@@ -114,7 +132,5 @@
     width: 24px;
     bottom: unset;
     left: unset;
-  }
-  .modal__content {
   }
 }

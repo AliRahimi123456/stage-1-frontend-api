@@ -18,6 +18,7 @@ import {
   deleteArticle,
 } from "./utils/api";
 import { CurrentUserContext } from "./utils/context/CurrentUser";
+import RegisterSuccessModal from "./components/RegisterSuccessModal";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -100,7 +101,7 @@ function App() {
   };
 
   const handleLogin = (credentials) => {
-    loginUser(credentials)
+    return loginUser(credentials)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
@@ -118,12 +119,17 @@ function App() {
     registerUser(userData)
       .then((res) => {
         if (res.email) {
-          handleLogin({ email: userData.email, password: userData.password });
-          closeActiveModal();
+          handleLogin({
+            email: userData.email,
+            password: userData.password,
+          }).then(() => {
+            setActiveModal("register-success-modal");
+          });
         }
       })
       .catch((err) => console.error("Error during registration:", err));
   };
+  console.log(activeModal);
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
@@ -200,6 +206,10 @@ function App() {
           onClose={handleCloseMenu}
           onSignInClick={onLoginClick}
           handleLogout={handleLogout}
+        />
+        <RegisterSuccessModal
+          isOpen={activeModal === "register-success-modal"}
+          onClose={closeActiveModal}
         />
 
         <Footer />

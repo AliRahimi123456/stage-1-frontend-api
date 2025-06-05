@@ -39,7 +39,6 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
   border-radius: 10px;
   color: rgba(0, 0, 0, 1);
-  z-index: 2;
 }
 .newscard__image {
   width: 100%;
@@ -94,12 +93,15 @@
   border-radius: 8px;
   padding: 8px;
 }
-.newscard__save-btn:hover {
+.newscard__save-btn_home:hover {
   background-image: url(../assets/black-save-icon.svg);
 }
 .newscard__save-btn_trash {
   background-image: url(../assets/trash-icon.svg);
   background-repeat: no-repeat;
+}
+.newscard__save_black_trash_btn:hover {
+  background-image: url(../assets/black-trash-icon.svg);
 }
 .newscard__container {
   display: flex;
@@ -115,10 +117,26 @@
   .newscard__description {
     font-size: 16px;
     font-weight: 400px;
+    height: 88px;
+    line-height: 22px;
+    -webkit-line-clamp: 4;
   }
   .newscard__image {
     width: 224px;
     height: 150px;
+  }
+  .newscard__title {
+    margin-top: 8px;
+  }
+  .newscard__container {
+    padding: 20px 15px 16px;
+  }
+  .newscard__title {
+    margin-top: 8px;
+    -webkit-line-clamp: 3;
+    height: 72px;
+    font-size: 22px;
+    line-height: 24px;
   }
 }
 @media screen and (max-width: 530px) {

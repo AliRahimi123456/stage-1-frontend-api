@@ -7,26 +7,29 @@
   color: white;
   position: relative;
   margin-top: 108px;
+  max-width: 1440px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
 }
 
 .footer__copyright {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: rgba(182, 191, 1);
-  font-size: 14px;
-  color: #333;
+  color: rgba(182, 188, 191, 1);
 }
-.footer__image-container {
+.footer__social {
   display: flex;
   gap: 24px;
 }
 
-.footer__right {
+.footer__content {
   display: flex;
   gap: 40px;
 }
-.footer__btns-container {
+.footer__nav {
   display: flex;
   gap: 40px;
 }
@@ -37,7 +40,7 @@
   cursor: pointer;
 }
 
-.footer__btn {
+.footer__link {
   background-color: transparent;
   padding: 0;
   cursor: pointer;
@@ -46,15 +49,16 @@
   font-weight: 400;
   font-size: 18px;
   color: rgba(26, 27, 34, 1);
+  text-decoration: none;
 }
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 20px 16px;
+    padding: 20px 40px 20px;
     align-items: stretch;
   }
 }
 @media screen and (max-width: 616px) {
-  .footer__btns-container {
+  .footer__nav {
     display: flex;
     flex-direction: column-reverse;
     margin-right: auto;

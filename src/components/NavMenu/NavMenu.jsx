@@ -14,14 +14,14 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
   return (
     <div className={`nav-menu ${isOpen ? "nav-menu__opened" : ""}`}>
       <div className="nav-menu__header">
-        <span>NewsExplorer</span>
+        <span clsssName="nav-menu__logo">NewsExplorer</span>
         <button className="nav-menu__close-btn" onClick={onClose} />
       </div>
       <ul className="nav-menu__content">
         <Link
           to="/"
-          className={`nav-menu__home-btn 
-          ${isHome ? "nav-menu__home-btn_active" : ""}`}
+          className={`nav-menu__link 
+          ${isHome ? "nav-menu__link--active" : ""}`}
           onClick={onClose}
         >
           Home
@@ -30,8 +30,8 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
           <>
             <Link
               to="/saved-news"
-              className={`nav-menu__savedarticles_btn ${
-                !isHome ? "" : "nav-menu__savedarticles-btn_active"
+              className={`nav-menu__link ${
+                !isHome ? "" : "nav-menu__link--active"
               }`}
               onClick={onClose}
             >
@@ -40,25 +40,23 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
 
             <button
               className={`nav-menu__logout-btn ${
-                isHome ? "" : "nav-menu__btn_theme_light"
+                isHome ? "" : "nav-menu__logout-btn--theme-light"
               }`}
               onClick={handleLogout}
             >
               {/* Elise */}
               <img
-                className="nav-menu__signout_image"
+                className="nav-menu__signout_icon"
                 src={logouticonwhite}
                 alt="logout"
               />
             </button>
           </>
         ) : (
-          <li>
-            <div className="nave-menu_signin_btn_container">
-              <button className="nav-menu__signin-btn" onClick={onSignInClick}>
-                Sign In
-              </button>
-            </div>
+          <li className="nav-menu__sigin-container">
+            <button className="nav-menu__signin-btn" onClick={onSignInClick}>
+              Sign In
+            </button>
           </li>
         )}
       </ul>

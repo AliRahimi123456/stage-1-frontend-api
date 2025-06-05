@@ -13,11 +13,11 @@
   object-fit: cover;
   border-radius: 1000px;
 }
-.about-text {
+.about__content {
   max-width: 600px;
   text-align: left;
 }
-.about__author {
+.about__title {
   font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
@@ -27,7 +27,7 @@
   text-align: center;
   text-align: start;
 }
-.about__author-paragraph {
+.about__paragraphs {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -45,9 +45,9 @@
   }
   .about {
     gap: 32px;
-    padding: 40px 40px 61px 40px;
+    padding: 32px 16px 128px;
   }
-  .about__author {
+  .about__title {
     font-size: 30px;
   }
 }
@@ -58,13 +58,14 @@
     border-radius: 1000px;
     margin: 32px 24px 24px 24px;
   }
-  .about__author-paragraph {
+  .about__paragraphs {
     margin-top: 16px;
   }
   .about {
     flex-direction: column;
   }
-  .about__author {
+  .about__title {
     font-size: 30px;
+    padding: 24px 16px 16px 16px;
   }
 }

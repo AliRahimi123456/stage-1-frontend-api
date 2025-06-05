@@ -10,13 +10,13 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
   };
 
   return (
-    <div className="newscards-section">
-      <div className="newscards-section__header">
-        <p className="newscards-section__title newscards__search-title">
+    <div className="newscards">
+      <div className="newscards__header">
+        <p className="newscards__title newscards__title_type_search">
           Search results
         </p>
       </div>
-      <ul className="newscards-section__items">
+      <ul className="newscards__list">
         {cards.slice(0, visibleCount)?.map((item) => (
           <NewsCard
             key={item._id}

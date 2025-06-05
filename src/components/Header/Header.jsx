@@ -21,9 +21,7 @@ function Header({
 
   return (
     <header className={`header ${isHome ? "" : "header__saved-articles"}`}>
-      <nav
-        className={`header__links ${isHome ? "" : "header__links_theme_light"}`}
-      >
+      <nav className={`header__nav ${isHome ? "" : "header__nav_theme_light"}`}>
         <div className="header__logo">NewsExplorer</div>
         {!isOpen && (
           <button
@@ -32,7 +30,7 @@ function Header({
           ></button>
         )}
 
-        <div className="header__btns">
+        <div className="header__actions">
           <Link
             to="/"
             className={`header__link ${
@@ -62,7 +60,7 @@ function Header({
               >
                 Elise
                 <img
-                  className="header__signout_image"
+                  className="header__signout-icon"
                   src={isHome ? logouticonwhite : logouticon}
                   alt="logout"
                 />
@@ -78,7 +76,7 @@ function Header({
       {isHome ? (
         <>
           <h1 className="header__title">What's going on in the world?</h1>
-          <p className="header__text">
+          <p className="header__subtitle">
             Find the latest news on any topic and save them in your personal
             account.
           </p>
