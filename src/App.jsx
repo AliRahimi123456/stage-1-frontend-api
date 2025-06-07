@@ -29,6 +29,7 @@ function App() {
   const [savedCards, setSavedCards] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
@@ -50,16 +51,26 @@ function App() {
     const isSaved = savedCards.some((c) => c.url === card.url);
     console.log("Is card already saved?", isSaved);
     card.keyword = keyword;
-    if (!isSaved) {
+    card.isSaved = !card.isSaved;
+    if (card.isSaved) {
       console.log("Adding card to savedCards:", card);
       saveArticle(card).then((newArticle) => {
         setSavedCards([...savedCards, newArticle]);
       });
-
-      setTimeout(() => {
-        console.log("savedCards after timeout:", savedCards);
-      }, 2000);
+    } else {
+      setSavedCards((prevSavedCards) =>
+        prevSavedCards.filter(
+          (savedCard) => savedCard.urlToImage !== card.urlToImage
+        )
+      );
     }
+
+    // if you can uncheck it then you must account for that in your "Saced articles"
+
+    setTimeout(() => {
+      console.log("savedCards after timeout:", savedCards);
+    }, 2000);
+    // }
   };
 
   const handleCardDelete = (cardToDelete) => {
@@ -71,6 +82,18 @@ function App() {
             (card) => card.urlToImage !== cardToDelete.urlToImage
           )
         );
+        // set issaved to false if we delete a card.
+        // we are doing this for your current setup, you might need to just clear your cards when navigating back to the home screen.
+        setCards((prevCards) =>
+          prevCards.map((card) =>
+            card.urlToImage === cardToDelete.urlToImage
+              ? {
+                  ...card,
+                  isSaved: false,
+                }
+              : card
+          )
+        );
       })
       .catch((err) => {
         console.error("Failed to delete article:", err);
@@ -78,11 +101,23 @@ function App() {
   };
 
   const handleSearchSubmit = (searchTerm) => {
+    setIsLoading(true);
     setKeyword(searchTerm);
     getNewsArticles(searchTerm)
       .then((data) => {
-        setCards(data.articles);
+        let articles = data.articles.map((article) => {
+          return {
+            ...article,
+            isSaved: false,
+            keyword: searchTerm,
+          };
+        });
+        setCards(articles);
         setShowSearchResult(true);
+        // setTimeout(() => {
+        // just to simulate a longer ressponse so we can develope the prelaoder
+        setIsLoading(false);
+        // }, 2000);
       })
       .catch((error) => console.error("Error fetching news articles:", error));
   };
@@ -171,6 +206,7 @@ function App() {
                 onCardClick={handleCardClick}
                 handleCardSave={handleCardSave}
                 showSearchResult={showSearchResult}
+                isLoading={isLoading}
               />
             }
           />

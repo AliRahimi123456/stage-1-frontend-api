@@ -81,7 +81,7 @@
   line-height: 22px;
   letter-spacing: 0px;
 }
-.newscard__save-btn {
+.newscard-save__btn {
   background: #fff url(../assets/saving-icon.svg) center no-repeat;
   position: absolute;
   width: 40px;
@@ -93,15 +93,18 @@
   border-radius: 8px;
   padding: 8px;
 }
-.newscard__save-btn_home:hover {
+.newscard-save__btn-home:hover {
   background-image: url(../assets/black-save-icon.svg);
 }
-.newscard__save-btn_trash {
+.newscard-save__btn-trash {
   background-image: url(../assets/trash-icon.svg);
   background-repeat: no-repeat;
 }
-.newscard__save_black_trash_btn:hover {
+.newscard-save__black_trash-btn:hover {
   background-image: url(../assets/black-trash-icon.svg);
+}
+.newscard-save__btn-saved {
+  background-image: url(../assets/blue-saving-icon.svg);
 }
 .newscard__container {
   display: flex;

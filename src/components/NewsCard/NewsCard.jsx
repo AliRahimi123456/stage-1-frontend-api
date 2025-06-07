@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CurrentUserContext } from "../../utils/context/CurrentUser";
 import "../../blocks/NewsCard.css";
 import { useLocation } from "react-router-dom";
@@ -6,8 +6,10 @@ import { useLocation } from "react-router-dom";
 function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
   const currentUser = useContext(CurrentUserContext);
   const location = useLocation();
+  // const [isSaved, setIsSaved] = useState(false);
   const handleSaveClick = () => {
     handleCardSave(item);
+    // setIsSaved(true);
   };
   console.log(item);
   const publishedDate = new Date(item.publishedAt);
@@ -27,10 +29,16 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
         <div className="newscard__keyword">{item.keyword}</div>
       )}
       <button
-        className={`newscard__save-btn ${
+        className={`newscard-save__btn ${
           location.pathname === "/saved-news"
-            ? "newscard__save-btn_trash newscard__save_black_trash_btn"
-            : "newscard__save-btn_home"
+            ? "newscard-save__btn-trash newscard-save__black_trash-btn"
+            : "newscard-save__btn-home"
+        } ${
+          location.pathname === "/saved-news"
+            ? ""
+            : item.isSaved
+            ? "newscard-save__btn-saved"
+            : ""
         }`}
         onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
       ></button>

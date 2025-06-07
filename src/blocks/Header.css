@@ -6,13 +6,13 @@
   background-color: #1a1a1a;
   color: #fff;
   background-image: url(../assets/background-image.png);
-  padding: 0 0 28px;
+  padding: 0 0 80px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.header__saved-articles {
+.header-saved__articles {
   background-color: #fff;
   background-image: none;
   border-bottom: 1px solid rgba(209, 210, 214, 1);
@@ -42,15 +42,15 @@
   height: 80px;
   background-color: transparent;
   color: white;
-  /* margin-bottom: 80px; */
+
   max-width: 1440px;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 40px;
+  /* padding: 0 40px; */
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.header__nav_theme_light {
+.header-nav__theme-light {
   background-color: white;
   color: black;
 }
@@ -72,12 +72,12 @@
   margin-right: 64px;
 }
 
-.header__link_active {
+.header-link__active {
   border-bottom: 3px solid rgba(255, 255, 255, 1);
   height: 80px;
   margin-right: 66px;
 }
-.header__link_theme_light {
+.header-link__theme-light {
   border-color: black;
 }
 .header__btn {
@@ -98,40 +98,41 @@
   padding: 8px 12px;
   width: 112px;
 }
-.header__signout-icon {
+.header-signout__icon {
   width: 24px;
 }
-.header__btn_theme_light {
+.header-btn__theme-light {
   background-color: white;
   color: black;
   border-color: black;
 }
 .header__title {
-  text-align: center;
+  text-align: left;
   font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 60px;
   margin-bottom: 32px;
   line-height: 64px;
   margin-top: 80px;
+  max-width: 608px;
 }
 
 .header__subtitle {
-  text-align: center;
+  /* text-align: center; */
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  margin-bottom: 88px;
+  margin-bottom: 0;
   margin-top: 0;
   line-height: 24px;
 }
-.header__menu-btn {
+.header-menu__btn {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 0px 16px;
+    padding-bottom: 48px;
     background-size: cover;
   }
   .header__links {
@@ -142,7 +143,7 @@
     height: auto;
   }
   .header__link,
-  .header__link_active {
+  .header-link__active {
     margin: 0;
     height: auto;
     font-size: 16px;
@@ -153,14 +154,11 @@
     justify-content: center;
     flex-wrap: wrap;
     align-self: stretch;
-    /* gap: 12px; */
   }
 
   .header__btn {
     font-size: 16px;
-    /* margin-top: 14px; */
     margin-right: 40px;
-    /* margin-bottom: 12px; */
     margin-right: 16px;
     margin-left: 16px;
   }
@@ -168,36 +166,31 @@
     font-size: 36px;
     line-height: 40px;
     margin-top: 38px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    max-width: 448px;
   }
   .header__subtitle {
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 10px;
-    margin-top: 16px;
+    /* margin-top: 16px; */
+    max-width: 448px;
   }
 
   .header__nav {
     height: 66px;
+    padding: 0 40px;
   }
 }
-/* @media screen and (max-width: 740px) {
-  .header__nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 16px;
-    gap: 12px;
-    height: auto;
-  }
-} */
+
 @media screen and (max-width: 530px) {
   .header__logo {
-    margin: 16px auto 16px 16px;
+    /* margin: 16px auto 16px 16px; */
     font-size: 16px;
   }
   .header__actions {
     display: none;
   }
-  .header__menu-btn {
+  .header-menu__btn {
     background-image: url(../assets/menu-icon.svg);
     width: 24px;
     height: 24px;
@@ -206,13 +199,30 @@
     background-color: transparent;
     display: block;
   }
-  .header__menu_black {
+  .header-menu__black {
     background-image: url(../assets/menu-icon-black.svg);
   }
   .header__title {
     margin-top: 30px;
+    line-height: 40px;
+    margin-right: 19px;
+    margin-left: 19px;
+    font-size: 36px;
+    margin-bottom: 0;
   }
   .header__subtitle {
     margin-top: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
+    line-height: 24px;
+    font-size: 18px;
+    padding: 0;
+  }
+  .header__nav {
+    height: 56px;
+    padding: 0 16px;
+  }
+  .header {
+    padding-bottom: 32px;
   }
 }

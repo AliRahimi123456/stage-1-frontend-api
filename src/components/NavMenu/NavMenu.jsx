@@ -21,7 +21,7 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
         <Link
           to="/"
           className={`nav-menu__link 
-          ${isHome ? "nav-menu__link--active" : ""}`}
+          ${isHome ? "nav-menu__link-active" : ""}`}
           onClick={onClose}
         >
           Home
@@ -31,7 +31,7 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
             <Link
               to="/saved-news"
               className={`nav-menu__link ${
-                !isHome ? "" : "nav-menu__link--active"
+                !isHome ? "" : "nav-menu__link-active"
               }`}
               onClick={onClose}
             >
@@ -40,20 +40,20 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
 
             <button
               className={`nav-menu__logout-btn ${
-                isHome ? "" : "nav-menu__logout-btn--theme-light"
+                isHome ? "" : "nav-menu__logout_btn_theme-light"
               }`}
               onClick={handleLogout}
             >
               {/* Elise */}
               <img
-                className="nav-menu__signout_icon"
+                className="nav-menu__signout-icon"
                 src={logouticonwhite}
                 alt="logout"
               />
             </button>
           </>
         ) : (
-          <li className="nav-menu__sigin-container">
+          <li className="nav-menu__signin-container">
             <button className="nav-menu__signin-btn" onClick={onSignInClick}>
               Sign In
             </button>

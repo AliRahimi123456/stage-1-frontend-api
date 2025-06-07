@@ -5,7 +5,7 @@
   gap: 10px;
   width: 608px;
   margin-top: 88px;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
   background-color: white;
   border-radius: 31.5px;
   justify-content: space-between;
@@ -43,6 +43,7 @@
     gap: 16px;
     flex-direction: column;
     align-items: stretch;
+    margin-top: 122px;
 
     background-color: transparent;
   }
@@ -52,9 +53,17 @@
     gap: 16px;
     flex-direction: column;
     align-items: stretch;
+    width: 288px;
 
     background-color: transparent;
     gap: 16px;
-    width: 100%;
+  }
+  .search__input {
+    padding: 17px 16px;
+    line-height: 22px;
+  }
+  .search__btn {
+    padding: 16px 24px;
+    line-height: 24px;
   }
 }

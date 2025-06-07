@@ -55,6 +55,7 @@
   .footer {
     padding: 20px 40px 20px;
     align-items: stretch;
+    margin-top: 0px;
   }
 }
 @media screen and (max-width: 616px) {
