@@ -71,6 +71,12 @@
 }
 
 @font-face {
+  font-family: "Roboto Slab";
+  font-style: "normal";
+  font-weight: 700;
+  src: local("Roboto Slab"), url("RobotoSlab-bold.ttf") format("truetype");
+}
+@font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

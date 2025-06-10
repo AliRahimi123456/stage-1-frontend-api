@@ -23,7 +23,7 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
 
   return (
     <li className="newscard">
-      <div className="newscard__save-container"></div>
+      {/* <div className="newscard__save-container"></div> */}
       <img className="newscard__image" src={item.urlToImage} alt={item.name} />
       {location.pathname === "/saved-news" && (
         <div className="newscard__keyword">{item.keyword}</div>

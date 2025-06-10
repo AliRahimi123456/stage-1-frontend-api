@@ -5,9 +5,7 @@ import github from "../../assets/github-icon.png";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__copyright">
-        @2025 Supersite, Powered by News API
-      </div>
+      <p className="footer__copyright">@2025 Supersite, Powered by News API</p>
 
       <div className="footer__content">
         <nav className="footer__nav">

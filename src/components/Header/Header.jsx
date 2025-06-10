@@ -20,7 +20,7 @@ function Header({
   const isHome = location.pathname === "/";
 
   return (
-    <header className={`header ${isHome ? "" : "header-saved__articles"}`}>
+    <header className={`header ${isHome ? "" : "header__saved-articles"}`}>
       <nav className={`header__nav ${isHome ? "" : "header-nav__theme-light"}`}>
         <div className="header__logo">NewsExplorer</div>
         {!isOpen && (
@@ -47,7 +47,7 @@ function Header({
               <Link
                 to="/saved-news"
                 className={`header__link ${
-                  isHome ? "" : "header__link_active header-link__heme-light"
+                  isHome ? "" : "header__link_active header-link__theme-light"
                 }`}
               >
                 Saved articles

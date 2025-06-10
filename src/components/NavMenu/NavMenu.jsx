@@ -14,7 +14,7 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
   return (
     <div className={`nav-menu ${isOpen ? "nav-menu__opened" : ""}`}>
       <div className="nav-menu__header">
-        <span clsssName="nav-menu__logo">NewsExplorer</span>
+        <span className="nav-menu__logo">NewsExplorer</span>
         <button className="nav-menu__close-btn" onClick={onClose} />
       </div>
       <ul className="nav-menu__content">
