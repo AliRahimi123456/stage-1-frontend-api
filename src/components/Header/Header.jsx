@@ -20,12 +20,12 @@ function Header({
   const isHome = location.pathname === "/";
 
   return (
-    <header className={`header ${isHome ? "" : "header__saved-articles"}`}>
-      <nav className={`header__nav ${isHome ? "" : "header-nav__theme-light"}`}>
+    <header className={`header ${isHome ? "" : "header__saved_articles"}`}>
+      <nav className={`header__nav ${isHome ? "" : "header__nav_theme_light"}`}>
         <div className="header__logo">NewsExplorer</div>
         {!isOpen && (
           <button
-            className={`header-menu__btn ${!isHome && "header-menu__black"}`}
+            className={`header__menu-btn ${!isHome && "header__menu_black"}`}
             onClick={handleMenuBtnClick}
           ></button>
         )}
@@ -35,8 +35,8 @@ function Header({
             to="/"
             className={`header__link ${
               isHome
-                ? "header-link__active"
-                : "header-link__location-savednews header-link__theme-light"
+                ? "header__link_active"
+                : "header__link_location_savednews header__link_theme_light"
             }`}
           >
             Home
@@ -47,20 +47,20 @@ function Header({
               <Link
                 to="/saved-news"
                 className={`header__link ${
-                  isHome ? "" : "header__link_active header-link__theme-light"
+                  isHome ? "" : "header__link_active header__link_theme_light"
                 }`}
               >
                 Saved articles
               </Link>
               <button
                 className={`header__btn ${
-                  isHome ? "" : "header-btn__theme-light"
+                  isHome ? "" : "header__btn_theme_light"
                 }`}
                 onClick={handleLogout}
               >
                 Elise
                 <img
-                  className="header-signout__icon"
+                  className="header__signout_icon"
                   src={isHome ? logouticonwhite : logouticon}
                   alt="logout"
                 />

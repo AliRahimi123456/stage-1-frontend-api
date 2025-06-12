@@ -28,20 +28,27 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
       {location.pathname === "/saved-news" && (
         <div className="newscard__keyword">{item.keyword}</div>
       )}
-      <button
-        className={`newscard-save__btn ${
-          location.pathname === "/saved-news"
-            ? "newscard-save__btn-trash newscard-save__black_trash-btn"
-            : "newscard-save__btn-home"
-        } ${
-          location.pathname === "/saved-news"
-            ? ""
-            : item.isSaved
-            ? "newscard-save__btn-saved"
-            : ""
-        }`}
-        onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
-      ></button>
+      <div className="newscard__btn-container">
+        {!currentUser && isHome && (
+          <div className="newscard__text">Sign in to save articles</div>
+        )}
+
+        {!isHome && <div className="newscard__text">Remove from saved</div>}
+        <button
+          className={`newscard__save_btn ${
+            location.pathname === "/saved-news"
+              ? "newscard__save_btn_trash newscard__save_black_trash_btn"
+              : "newscard__save_btn_home"
+          } ${
+            location.pathname === "/saved-news"
+              ? ""
+              : item.isSaved
+              ? "newscard__save_btn_saved"
+              : ""
+          }`}
+          onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
+        ></button>
+      </div>
 
       <div className="newscard__container">
         <time className="newscard__date" dateTime={publishedDate.toISOString()}>

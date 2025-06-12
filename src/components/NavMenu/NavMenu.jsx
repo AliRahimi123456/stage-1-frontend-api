@@ -12,16 +12,16 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
   const isHome = location.pathname === "/";
 
   return (
-    <div className={`nav-menu ${isOpen ? "nav-menu__opened" : ""}`}>
-      <div className="nav-menu__header">
-        <span className="nav-menu__logo">NewsExplorer</span>
-        <button className="nav-menu__close-btn" onClick={onClose} />
+    <div className={`nav-menu ${isOpen ? "nav__menu_opened" : ""}`}>
+      <div className="nav__menu_header">
+        <span className="nav__menu_logo">NewsExplorer</span>
+        <button className="nav__menu_close_btn" onClick={onClose} />
       </div>
-      <ul className="nav-menu__content">
+      <ul className="nav__menu_content">
         <Link
           to="/"
-          className={`nav-menu__link 
-          ${isHome ? "nav-menu__link-active" : ""}`}
+          className={`nav__menu_link 
+          ${isHome ? "nav__menu_link_active" : ""}`}
           onClick={onClose}
         >
           Home
@@ -30,8 +30,8 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
           <>
             <Link
               to="/saved-news"
-              className={`nav-menu__link ${
-                !isHome ? "" : "nav-menu__link-active"
+              className={`nav__menu_link ${
+                !isHome ? "" : "nav__menu_link_active"
               }`}
               onClick={onClose}
             >
@@ -39,22 +39,22 @@ function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
             </Link>
 
             <button
-              className={`nav-menu__logout-btn ${
-                isHome ? "" : "nav-menu__logout_btn_theme-light"
+              className={`nav__menu_logout_btn ${
+                isHome ? "" : "nav__menu_logout_btn_theme_light"
               }`}
               onClick={handleLogout}
             >
               {/* Elise */}
               <img
-                className="nav-menu__signout-icon"
+                className="nav__menu_signout_icon"
                 src={logouticonwhite}
                 alt="logout"
               />
             </button>
           </>
         ) : (
-          <li className="nav-menu__signin-container">
-            <button className="nav-menu__signin-btn" onClick={onSignInClick}>
+          <li className="nav__menu_signin_container">
+            <button className="nav__menu_signin_btn" onClick={onSignInClick}>
               Sign In
             </button>
           </li>

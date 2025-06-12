@@ -3,8 +3,8 @@ import "../../blocks/Preloader.css";
 const Preloader = () => {
   return (
     <div className="preloader">
-      <div className="preloader-spinner"></div>
-      <div className="preloader-message">searching for news</div>
+      <div className="preloader__spinner"></div>
+      <div className="preloader__message">searching for news</div>
     </div>
   );
 };

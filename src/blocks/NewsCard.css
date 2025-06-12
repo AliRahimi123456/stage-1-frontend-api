@@ -30,8 +30,8 @@
 }
 .newscard__keyword {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 24px;
+  left: 24px;
   background-color: rgba(255, 255, 255, 1);
   padding: 8px 20px;
   font-size: 18px;
@@ -82,37 +82,76 @@
   letter-spacing: 0px;
 }
 
-.newscard-save__btn {
+.newscard__save_btn {
   background: #fff url(../assets/saving-icon.svg) center no-repeat;
-  position: absolute;
+  /* position: absolute; */
   width: 40px;
   height: 40px;
-  top: 10px;
-  right: 10px;
   border: none;
   cursor: pointer;
   border-radius: 8px;
   padding: 8px;
 }
-.newscard-save__btn-home:hover {
+.newscard__save_btn_home:hover {
   background-image: url(../assets/black-save-icon.svg);
 }
+.newscard__text {
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
 
-.newscard-save__btn-trash {
+  /* position: absolute; */
+  top: 15px;
+  right: 58px;
+  background-color: white;
+  padding: 0 20px;
+  border-radius: 6px;
+  height: 40px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.newscard__save_btn:hover + .newscard__text {
+  visibility: visible;
+  opacity: 1;
+}
+.newscard__btn-container:hover .newscard__text {
+  visibility: visible;
+}
+
+.newscard__btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  gap: 5px;
+}
+
+/* .newscard__save_btn_trash:hover + .news__text {
+  background-image: url(../assets/black-trash-icon.svg);
+} */
+.newscard__save_btn_trash {
   background-image: url(../assets/trash-icon.svg);
   background-repeat: no-repeat;
 }
-.newscard-save__black_trash-btn:hover {
+.newscard__save_black_trash_btn:hover {
   background-image: url(../assets/black-trash-icon.svg);
 }
-.newscard-save__btn-saved {
+.newscard__save_btn_saved {
   background-image: url(../assets/blue-saving-icon.svg);
 }
-.newscard-save__btn-saved:hover {
+.newscard__save_btn_saved:hover {
   /* opacity: 0.8; */
   background-image: url(../assets/blue-saving-icon-hover.svg);
 }
-/* .newscard-save__btn-saved:hover {
+/* .newscard__save_btn_saved:hover {
   background-image: url(../assets/blue-saving-icon.svg);
 } */
 .newscard__container {
@@ -150,6 +189,18 @@
     font-size: 22px;
     line-height: 24px;
   }
+  .newscard__keyword {
+    top: 8px;
+    left: 8px;
+  }
+  .newscard__save_btn {
+    top: 10px;
+    right: 10px;
+  }
+  .newscard__btn-container {
+    top: 8px;
+    right: 8px;
+  }
 }
 @media screen and (max-width: 530px) {
   .newscard {
@@ -158,5 +209,13 @@
   }
   .newscard__image {
     width: 100%;
+  }
+  .newscard__keyword {
+    top: 16px;
+    left: 16px;
+  }
+  .newscard__btn-container {
+    top: 16px;
+    right: 16px;
   }
 }

@@ -8,6 +8,7 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
   const handleShowMore = () => {
     setVisiableCount((prev) => prev + 3);
   };
+  console.log(cards);
 
   return (
     <div className="newscards">
@@ -19,7 +20,7 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
       <ul className="newscards__list">
         {cards.slice(0, visibleCount)?.map((item) => (
           <NewsCard
-            key={item._id}
+            key={item.url}
             item={item}
             onCardClick={handleCardClick}
             handleCardSave={handleCardSave}
@@ -29,7 +30,7 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
 
       {visibleCount < cards.length && (
         <button
-          className="newsCards-section newscards__show-more-cards-btn"
+          className="newsCards__section newscards__show_more_cards_btn"
           onClick={handleShowMore}
         >
           Show More
