@@ -22,7 +22,13 @@ function Footer() {
           </a>
         </nav>
         <div className="footer__social">
-          <img src={facebook} alt="facebook" className="footer__icon" />
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={facebook} alt="facebook" className="footer__icon" />
+          </a>
           <a
             href="https://github.com/AliRahimi123456?tab=repositories"
             target="_blank"

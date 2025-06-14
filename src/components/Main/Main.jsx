@@ -17,7 +17,7 @@ function Main({
       {isLoading ? (
         <Preloader />
       ) : (
-        <>
+        <section>
           {showSearchResult && (
             <>
               {cards.length > 0 ? (
@@ -41,8 +41,9 @@ function Main({
               )}
             </>
           )}
-        </>
+        </section>
       )}
+
       <About />
     </>
   );

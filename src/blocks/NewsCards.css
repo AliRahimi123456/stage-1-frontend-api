@@ -56,7 +56,7 @@
   margin-top: 0;
   color: rgba(26, 27, 34, 1);
 }
-.newscards__show_more_cards_btn {
+.newscards__show-more-btn {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -68,7 +68,7 @@
   background-color: #fff;
   color: rgba(26, 27, 34, 1);
 }
-.newscards__show_more_cards_btn:hover {
+.newscards__show-more-btn:hover {
   background-color: rgba(232, 232, 232, 1);
 }
 
@@ -96,7 +96,7 @@
     gap: 8px;
     padding: 32px 0;
   }
-  .newscards__show_more_cards_btn {
+  .newscards__show-more-btn {
     width: 288px;
   }
 }

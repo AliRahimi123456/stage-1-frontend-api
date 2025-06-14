@@ -4,11 +4,11 @@ import avatarImage from "../../assets/avatar-image.png";
 function About() {
   return (
     <>
-      <div className="about">
+      <section className="about">
         <img src={avatarImage} alt="Author" className="about__image" />
 
         <div className="about__content">
-          <h1 className="about__title">About the author</h1>
+          <h2 className="about__title">About the author</h2>
 
           <div className="about__paragraphs">
             <p className="about__paragraph">
@@ -33,7 +33,7 @@ function About() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
       {/* <Footer /> */}
     </>
   );

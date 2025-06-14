@@ -20,12 +20,14 @@ function Header({
   const isHome = location.pathname === "/";
 
   return (
-    <header className={`header ${isHome ? "" : "header__saved_articles"}`}>
+    <header className={`header ${isHome ? "" : "header_saved-articles"}`}>
       <nav className={`header__nav ${isHome ? "" : "header__nav_theme_light"}`}>
         <div className="header__logo">NewsExplorer</div>
         {!isOpen && (
           <button
-            className={`header__menu-btn ${!isHome && "header__menu_black"}`}
+            className={`header__menu-btn ${
+              !isHome && "header__menu-btn_black"
+            }`}
             onClick={handleMenuBtnClick}
           ></button>
         )}
@@ -60,7 +62,7 @@ function Header({
               >
                 Elise
                 <img
-                  className="header__signout_icon"
+                  className="header__signout-icon"
                   src={isHome ? logouticonwhite : logouticon}
                   alt="logout"
                 />

@@ -12,7 +12,7 @@
   background-position: center;
 }
 
-.header__saved_articles {
+.header_saved-articles {
   background-color: #fff;
   background-image: none;
   border-bottom: 1px solid rgba(209, 210, 214, 1);
@@ -98,7 +98,7 @@
   padding: 8px 12px;
   width: 112px;
 }
-.header__signout_icon {
+.header__signout-icon {
   width: 24px;
 }
 /* .header__link,
@@ -209,7 +209,7 @@
     background-color: transparent;
     display: block;
   }
-  .header__menu_black {
+  .header__menu-btn_black {
     background-image: url(../assets/menu-icon-black.svg);
   }
   .header__title {

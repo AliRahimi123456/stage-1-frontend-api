@@ -36,21 +36,20 @@ function SavedNews({
   };
 
   return (
-    <section className="saved__news">
-      <div className="saved__news_title_container">
-        <h2 className="saved__news_title">Saved articles</h2>
-        <h1 className="saved__news_articles">
+    <section className="saved-news">
+      <div className="saved-news__title-container">
+        <h2 className="saved-news__title">Saved articles</h2>
+        <p className="saved-news__articles">
           {currentUser?.name}, you have {savedCards.length} saved articles
-        </h1>
-        <h2 className="saved__news_keywords">
+        </p>
+        <p className="saved-news__keywords">
           Keywords:{" "}
-          <span className="saved__news_keyword">{renderKeywordsText()}</span>
-        </h2>
+          <span className="saved-news__keyword">{renderKeywordsText()}</span>
+        </p>
       </div>
-      <div className="saved__news_container">
-        <ul className="saved__news_list">
+      <div className="saved-news__container">
+        <ul className="saved-news__list">
           {savedCards.map((card) => (
-            // <li key={card.url} className="saved-news__item">
             <NewsCard
               key={card.url}
               item={card}

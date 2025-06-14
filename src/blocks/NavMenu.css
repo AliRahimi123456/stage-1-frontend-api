@@ -10,10 +10,10 @@
   align-items: center;
   visibility: hidden;
 }
-.nav__menu_opened {
+.nav-menu_opened {
   visibility: visible;
 }
-.nav__menu_content {
+.nav-menu__content {
   background-color: rgba(26, 27, 34, 1);
   position: absolute;
   top: 56px;
@@ -27,7 +27,7 @@
   margin: 0;
   padding: 0;
 }
-.nav__menu_close_btn {
+.nav-menu__close-btn {
   background-image: url(../assets/close-icon.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -40,7 +40,7 @@
   padding: 0;
   margin: 0;
 }
-.nav__menu_header {
+.nav-menu__header {
   background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   top: 0;
@@ -58,7 +58,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.nav__menu_link {
+.nav-menu__link {
   margin: 16px 16px 22px 16px;
   color: white;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -66,10 +66,10 @@
   font-size: 18px;
   text-decoration: none;
 }
-.nav__menu_link_active {
+.nav-menu__link-active {
   text-decoration: none;
 }
-.nav__menu_link {
+.nav-menu__link {
   align-self: stretch;
   text-decoration: none;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -85,7 +85,7 @@
   align-items: center;
   padding-left: 15px;
 }
-.nav__menu_logout_btn {
+.nav-menu__logout-btn {
   background: transparent;
 
   margin: 16px;
@@ -99,17 +99,17 @@
   padding: 12px 0;
 }
 
-.nav__menu_signout_icon {
+.nav-menu__signout-icon {
   width: 24px;
 }
 
-.nav__menu_signin_container {
+.nav-menu__signin-container {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.nav__menu_signin_btn {
+.nav-menu__signin-btn {
   width: 288px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -122,6 +122,6 @@
   margin: 16px 0;
 }
 
-.nav__menu_link {
+.nav-menu__link {
   color: white;
 }

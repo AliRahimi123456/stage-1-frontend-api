@@ -11,11 +11,11 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
   console.log(cards);
 
   return (
-    <div className="newscards">
+    <section className="newscards">
       <div className="newscards__header">
-        <p className="newscards__title newscards__title_type_search">
+        <h className="newscards__title newscards__title_type_search">
           Search results
-        </p>
+        </h>
       </div>
       <ul className="newscards__list">
         {cards.slice(0, visibleCount)?.map((item) => (
@@ -29,14 +29,11 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
       </ul>
 
       {visibleCount < cards.length && (
-        <button
-          className="newsCards__section newscards__show_more_cards_btn"
-          onClick={handleShowMore}
-        >
+        <button className="newscards__show-more-btn" onClick={handleShowMore}>
           Show More
         </button>
       )}
-    </div>
+    </section>
   );
 }
 

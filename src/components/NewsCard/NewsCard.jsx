@@ -35,15 +35,15 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
 
         {!isHome && <div className="newscard__text">Remove from saved</div>}
         <button
-          className={`newscard__save_btn ${
+          className={`newscard__save-btn ${
             location.pathname === "/saved-news"
-              ? "newscard__save_btn_trash newscard__save_black_trash_btn"
-              : "newscard__save_btn_home"
+              ? "newscard__save-btn_trash newscard__save-btn_color_black"
+              : "newscard__save-btn_home"
           } ${
             location.pathname === "/saved-news"
               ? ""
               : item.isSaved
-              ? "newscard__save_btn_saved"
+              ? "newscard__save-btn_saved"
               : ""
           }`}
           onClick={isHome ? handleSaveClick : () => handleCardDelete(item)}
