@@ -1,0 +1,114 @@
+.newscards {
+  background-color: rgba(245, 246, 247, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 80px 104px 80px 104px;
+}
+
+.newscards__header {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  max-width: 1232px;
+  margin: 0 auto;
+  width: 100%;
+}
+.newscards-section__add-btn {
+  border: none;
+  background-color: transparent;
+
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.newscards__title {
+  font-family: Cabinet Grotesk, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.newscards__list {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  list-style-type: none;
+  padding: 62px 0;
+}
+.newscards__title_type_search {
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 64px;
+  line-height: 46px;
+  margin-top: 0;
+  color: rgba(26, 27, 34, 1);
+}
+.newscards__show-more-btn {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px 98px 20px 98px;
+  border: none;
+  border-radius: 80px;
+  margin: 56px auto 0 auto;
+  width: 288px;
+  background-color: #fff;
+  color: rgba(26, 27, 34, 1);
+}
+.newscards__show-more-btn:hover {
+  background-color: rgba(232, 232, 232, 1);
+}
+
+@media screen and (max-width: 1231px) {
+  .newscards__header {
+    max-width: 816px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .newscards__header {
+    max-width: 700px;
+    font-size: 30px;
+  }
+  .newscards__title {
+    font-size: 30px;
+  }
+  .newscards {
+    padding: 40px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin: 0;
+  }
+  .newscards__list {
+    gap: 8px;
+    padding: 32px 0;
+  }
+  .newscards__show-more-btn {
+    width: 288px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .newscards__header {
+    max-width: 288px;
+    font-size: 30px;
+  }
+  .newscards__title {
+    font-size: 30px;
+  }
+  .newscards__list {
+    padding: 22px 0;
+  }
+}

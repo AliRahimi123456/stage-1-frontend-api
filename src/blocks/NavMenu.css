@@ -1,0 +1,127 @@
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.nav-menu_opened {
+  visibility: visible;
+}
+.nav-menu__content {
+  background-color: rgba(26, 27, 34, 1);
+  position: absolute;
+  top: 56px;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu__close-btn {
+  background-image: url(../assets/close-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu__header {
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(26, 27, 34, 1);
+  z-index: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu__link {
+  margin: 16px 16px 22px 16px;
+  color: white;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+}
+.nav-menu__link-active {
+  text-decoration: none;
+}
+.nav-menu__link {
+  align-self: stretch;
+  text-decoration: none;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.nav-menu__logout-btn {
+  background: transparent;
+
+  margin: 16px;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 100px;
+  padding: 12px 0;
+}
+
+.nav-menu__signout-icon {
+  width: 24px;
+}
+
+.nav-menu__signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.nav-menu__signin-btn {
+  width: 288px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  height: 56px;
+  margin: 16px 0;
+}
+
+.nav-menu__link {
+  color: white;
+}
