@@ -1,6 +1,6 @@
 import NewsCards from "../NewsCards/NewsCards";
 import About from "../About/About";
-import SearchForm from "../SearchForm/SearchForm";
+
 import Preloader from "../Preloader/Preloader";
 import Emoji from "../../assets/not-found-mo-icon.svg";
 
@@ -10,6 +10,7 @@ function Main({
   handleCardSave,
   showSearchResult,
   isLoading,
+  savedCards,
 }) {
   return (
     <>
@@ -25,6 +26,7 @@ function Main({
                   cards={cards}
                   onCardClick={onCardClick}
                   handleCardSave={handleCardSave}
+                  savedCards={savedCards}
                 />
               ) : (
                 <div className="no-result-message">

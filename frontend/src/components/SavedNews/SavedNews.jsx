@@ -1,7 +1,7 @@
+import { useContext } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "../../blocks/SavedNews.css";
 import CurrentUserContext from "../../utils/context/CurrentUser";
-import { useContext } from "react";
 
 function SavedNews({
   savedCards,
@@ -10,7 +10,7 @@ function SavedNews({
   handleCardSave,
 }) {
   const contextValue = useContext(CurrentUserContext);
-  const currentUser = contextValue.currentUser;
+  const { currentUser } = contextValue;
 
   const getSortedUniqueKeywords = (keywords) => {
     const counts = {};
@@ -58,6 +58,7 @@ function SavedNews({
               onCardClick={handleCardClick}
               handleCardSave={handleCardSave}
               handleCardDelete={handleCardDelete}
+              savedCards={savedCards}
             />
             // </li>
           ))}

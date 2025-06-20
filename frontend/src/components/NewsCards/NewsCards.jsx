@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../blocks/NewsCards.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
+function NewsCards({ cards, handleCardClick, handleCardSave, savedCards }) {
   const [visibleCount, setVisiableCount] = useState(3);
 
   const handleShowMore = () => {
@@ -24,6 +24,7 @@ function NewsCards({ cards, handleCardClick, onAddNewClick, handleCardSave }) {
             item={item}
             onCardClick={handleCardClick}
             handleCardSave={handleCardSave}
+            savedCards={savedCards}
           />
         ))}
       </ul>

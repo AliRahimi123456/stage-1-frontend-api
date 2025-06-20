@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "../../blocks/Header.css";
 import SearchForm from "../SearchForm/SearchForm";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import NavMenu from "../NavMenu/NavMenu";
+
 import logouticonwhite from "../../assets/logout-white-icon.svg";
 import logouticon from "../../assets/logout-black-icon.svg";
 import CurrentUserContext from "../../utils/context/CurrentUser";

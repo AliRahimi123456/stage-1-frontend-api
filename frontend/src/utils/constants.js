@@ -3,4 +3,4 @@ export const BASE_URL =
     ? "https://api.newsExplorer.hardsoft.nu"
     : "http://localhost:3001";
 export const APIkey = "c200de4185fa465ca50a0a30109fa3dc";
-export const NewsAPI_URL = "https://nomoreparties.co/news/v2";
+export const NEWSAPI_URL = "https://nomoreparties.co/news/v2";

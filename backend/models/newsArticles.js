@@ -9,6 +9,14 @@ const newsArticleSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 100,
   },
+  url: {
+    type: String,
+    required: true,
+  },
+  keyword: {
+    type: String,
+    required: true,
+  },
   content: {
     type: String,
     required: true,
@@ -26,11 +34,7 @@ const newsArticleSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  saves: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: "User",
-    default: [],
-  },
+
   createdAt: {
     type: Date,
     default: Date.now,

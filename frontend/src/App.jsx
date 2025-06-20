@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
-import About from "./components/About/About";
+
 import Footer from "./components/Footer/Footer";
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
@@ -16,6 +16,7 @@ import {
   checkToken,
   saveArticle,
   deleteArticle,
+  getArticles,
 } from "./utils/api";
 import CurrentUserContext from "./utils/context/CurrentUser";
 import RegisterSuccessModal from "./components/RegisterSuccessModal";
@@ -31,9 +32,17 @@ function App() {
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    setUser(null);
+  };
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
+      getArticles(token).then((res) => {
+        setSavedCards(res.data);
+      });
       checkToken(token)
         .then((res) => {
           setUser(res.data);
@@ -51,6 +60,7 @@ function App() {
     const isSaved = savedCards.some((c) => c.url === card.url);
     console.log("Is card already saved?", isSaved);
     card.keyword = keyword;
+
     card.isSaved = !card.isSaved;
     if (card.isSaved) {
       console.log("Adding card to savedCards:", card);
@@ -105,13 +115,11 @@ function App() {
     setKeyword(searchTerm);
     getNewsArticles(searchTerm)
       .then((data) => {
-        let articles = data.articles.map((article) => {
-          return {
-            ...article,
-            isSaved: false,
-            keyword: searchTerm,
-          };
-        });
+        const articles = data.articles.map((article) => ({
+          ...article,
+          isSaved: false,
+          keyword: searchTerm,
+        }));
         setCards(articles);
         setShowSearchResult(true);
         // setTimeout(() => {
@@ -135,8 +143,8 @@ function App() {
     setActiveModal("");
   };
 
-  const handleLogin = (credentials) => {
-    return loginUser(credentials)
+  const handleLogin = (credentials) =>
+    loginUser(credentials)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
@@ -149,7 +157,6 @@ function App() {
         }
       })
       .catch((err) => console.error("Login failed:", err));
-  };
 
   const handleRegister = (userData) => {
     registerUser(userData)
@@ -166,12 +173,6 @@ function App() {
       .catch((err) => console.error("Error during registration:", err));
   };
   console.log(activeModal);
-
-  const handleLogout = () => {
-    localStorage.removeItem("jwt");
-    setIsLoggedIn(false);
-    setUser(null);
-  };
 
   const handleCardClick = (card) => {
     console.log("Clicked card:", card);
@@ -208,6 +209,7 @@ function App() {
                 handleCardSave={handleCardSave}
                 showSearchResult={showSearchResult}
                 isLoading={isLoading}
+                savedCards={savedCards}
               />
             }
           />

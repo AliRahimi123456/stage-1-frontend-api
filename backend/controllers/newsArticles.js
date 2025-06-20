@@ -6,16 +6,19 @@ const NotFoundError = require("../errors/not-found-error");
 // Creating article
 const createArticles = (req, res, next) => {
   console.log("is the createnewArticles firing?");
-  const { title, content, urlToImage } = req.body;
+  const { title, content, urlToImage, url, keyword } = req.body;
 
   NewsArticle.create({
     title,
+    url,
+    keyword,
     content,
     urlToImage,
     author: req.user._id,
   })
     .then((article) => res.send({ data: article }))
     .catch((error) => {
+      console.error(error);
       if (error.name === "ValidationError") {
         return next(new BadRequestError("Invalid data passed"));
       }

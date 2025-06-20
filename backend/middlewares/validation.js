@@ -13,6 +13,8 @@ const validateURL = (value, helpers) => {
 const validateCreateArticles = celebrate({
   [Segments.BODY]: Joi.object().keys({
     title: Joi.string().required(),
+    url: Joi.string().required(),
+    keyword: Joi.string().required(),
 
     urlToImage: Joi.string().required().custom(validateURL).messages({
       "string.empty": 'The "urlToImage" field must be filled in',

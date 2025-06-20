@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import CurrentUserContext from "../../utils/context/CurrentUser";
 import "../../blocks/NewsCard.css";
-import { useLocation } from "react-router-dom";
 
-function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
+function NewsCard({ item, handleCardSave, handleCardDelete, savedCards }) {
   const currentUser = useContext(CurrentUserContext);
   const location = useLocation();
   // const [isSaved, setIsSaved] = useState(false);
@@ -11,16 +11,21 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
     handleCardSave(item);
     // setIsSaved(true);
   };
-  console.log(item);
   const publishedDate = new Date(item.publishedAt || item.createdAt);
   const formattedDate = publishedDate.toLocaleString("en-US", {
     month: "long",
     year: "numeric",
     day: "numeric",
   });
+  const isSaved = savedCards.some((c) => {
+    if (c.url === item.url) {
+      console.log("This one is saved:", item.url, c);
+    }
+    return c.url === item.url;
+  });
+  console.log({ isSaved, item, savedCards });
 
   const isHome = location.pathname === "/";
-  console.log(item);
   return (
     <li className="newscard">
       {/* <div className="newscard__save-container"></div> */}
@@ -40,9 +45,7 @@ function NewsCard({ item, onCardClick, handleCardSave, handleCardDelete }) {
               ? "newscard__save-btn_trash newscard__save-btn_color_black"
               : "newscard__save-btn_home"
           } ${
-            location.pathname === "/saved-news"
-              ? ""
-              : item.isSaved
+            location.pathname !== "/saved-news" && isSaved
               ? "newscard__save-btn_saved"
               : ""
           }`}

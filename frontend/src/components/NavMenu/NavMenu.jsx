@@ -1,9 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import "../../blocks/NavMenu.css";
 import { useLocation, Link } from "react-router-dom";
 import CurrentUserContext from "../../utils/context/CurrentUser";
 import logouticonwhite from "../../assets/logout-white-icon.svg";
-import logouticon from "../../assets/logout-black-icon.svg";
 
 function NavMenu({ isOpen, onClose, onSignInClick, handleLogout }) {
   const currentUsser = useContext(CurrentUserContext);
