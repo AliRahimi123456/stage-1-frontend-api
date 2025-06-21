@@ -1,10 +1,12 @@
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const BadRequestError = require("../errors/bad-request-error");
 const NotFoundError = require("../errors/not-found-error");
 const UnauthorizedError = require("../errors/unauthorized-error");
-const bcrypt = require("bcrypt");
 const User = require("../models/user");
-const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../utils/config");
+const ConflictError = require("../errors/conflic-error");
+const { HTTP_STATUS_OK, HTTP_STATUS_CREATED } = require("../utils/constants");
 
 console.log(JWT_SECRET);
 
@@ -26,7 +28,9 @@ const login = (req, res, next) => {
         expiresIn: "7d",
       });
 
-      return res.status(200).send({ message: "Login successful", token });
+      return res
+        .status(HTTP_STATUS_OK)
+        .send({ message: "Login successful", token });
     })
     .catch((error) => {
       console.error(error);
@@ -44,7 +48,7 @@ const getCurrentUser = (req, res, next) => {
       if (!user) {
         return next(new NotFoundError("User not found"));
       }
-      return res.status(200).send({ data: user });
+      return res.status(HTTP_STATUS_OK).send({ data: user });
     })
     .catch((error) => {
       if (error.name === "CastError") {
@@ -58,17 +62,15 @@ const getCurrentUser = (req, res, next) => {
 
 // Create user controller
 const createUser = (req, res, next) => {
-  const { username, email, password, avatar } = req.body;
+  const { name, email, password, avatar } = req.body;
 
-  if (!username || !email || !password) {
-    return next(
-      new BadRequestError("username, email, and password are required")
-    );
+  if (!name || !email || !password) {
+    return next(new BadRequestError("name, email, and password are required"));
   }
 
   return bcrypt.hash(password, 10).then((hashedPassword) => {
     const userData = {
-      username,
+      name,
       email,
       password: hashedPassword,
       avatar: avatar || "https://example.com/default-avatar.jpg",
@@ -78,7 +80,7 @@ const createUser = (req, res, next) => {
       .then((user) => {
         const userWithoutPassword = user.toObject();
         delete userWithoutPassword.password;
-        return res.status(201).send(userWithoutPassword);
+        return res.status(HTTP_STATUS_CREATED).send(userWithoutPassword);
       })
       .catch((error) => {
         console.error(error);

@@ -42,7 +42,7 @@ function SavedNews({
       <div className="saved-news__title-container">
         <h2 className="saved-news__title">Saved articles</h2>
         <p className="saved-news__articles">
-          {currentUser?.username}, you have {savedCards.length} saved articles
+          {currentUser?.name}, you have {savedCards.length} saved articles
         </p>
         <p className="saved-news__keywords">
           Keywords:{" "}

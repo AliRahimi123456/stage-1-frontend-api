@@ -2,10 +2,10 @@ const NewsArticle = require("../models/newsArticles");
 const BadRequestError = require("../errors/bad-request-error");
 const ForbiddenError = require("../errors/forbidden-error");
 const NotFoundError = require("../errors/not-found-error");
+const { HTTP_STATUS_OK } = require("../utils/constants");
 
 // Creating article
 const createArticles = (req, res, next) => {
-  console.log("is the createnewArticles firing?");
   const { title, content, urlToImage, url, keyword } = req.body;
 
   NewsArticle.create({
@@ -14,7 +14,7 @@ const createArticles = (req, res, next) => {
     keyword,
     content,
     urlToImage,
-    author: req.user._id,
+    owner: req.user._id,
   })
     .then((article) => res.send({ data: article }))
     .catch((error) => {
@@ -28,8 +28,8 @@ const createArticles = (req, res, next) => {
 
 // Getting all articles
 const getArticles = (req, res, next) => {
-  NewsArticle.find({})
-    .then((articles) => res.status(200).send({ data: articles }))
+  NewsArticle.find({ owner: req.user._id })
+    .then((articles) => res.status(HTTP_STATUS_OK).send({ data: articles }))
     .catch(next);
 };
 
@@ -47,7 +47,9 @@ const deleteArticle = (req, res, next) => {
       return NewsArticle.findByIdAndDelete(articleId);
     })
     .then(() =>
-      res.status(200).send({ message: "Article deleted successfully" })
+      res
+        .status(HTTP_STATUS_OK)
+        .send({ message: "Article deleted successfully" })
     )
     .catch((error) => {
       if (error.name === "CastError") {

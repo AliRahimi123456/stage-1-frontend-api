@@ -56,21 +56,22 @@ function App() {
   }, []);
 
   const handleCardSave = (card) => {
+    const updatedCard = { ...card };
     console.log("Before save - savedCards:", savedCards);
-    const isSaved = savedCards.some((c) => c.url === card.url);
+    const isSaved = savedCards.some((c) => c.url === updatedCard.url);
     console.log("Is card already saved?", isSaved);
-    card.keyword = keyword;
-
-    card.isSaved = !card.isSaved;
-    if (card.isSaved) {
-      console.log("Adding card to savedCards:", card);
-      saveArticle(card, localStorage.getItem("jwt")).then((newArticle) => {
-        setSavedCards([...savedCards, newArticle.data]);
-      });
+    updatedCard.keyword = keyword;
+    if (!isSaved) {
+      console.log("Adding card to savedCards:", updatedCard);
+      saveArticle(updatedCard, localStorage.getItem("jwt")).then(
+        (newArticle) => {
+          setSavedCards([...savedCards, newArticle.data]);
+        }
+      );
     } else {
       setSavedCards((prevSavedCards) =>
         prevSavedCards.filter(
-          (savedCard) => savedCard.urlToImage !== card.urlToImage
+          (savedCard) => savedCard.urlToImage !== updatedCard.urlToImage
         )
       );
     }
@@ -130,6 +131,10 @@ function App() {
       .catch((error) => console.error("Error fetching news articles:", error));
   };
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const onLoginClick = () => {
     setActiveModal("login-modal");
     handleCloseMenu();
@@ -180,10 +185,6 @@ function App() {
 
   const handleMenuBtnClick = () => {
     setIsMenuOpen(true);
-  };
-
-  const handleCloseMenu = () => {
-    setIsMenuOpen(false);
   };
 
   return (

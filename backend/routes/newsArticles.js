@@ -7,26 +7,20 @@ const {
   deleteArticle,
 } = require("../controllers/newsArticles");
 const {
-  validateCardBody,
-  validateId,
   validateCreateArticles,
+  validateId,
 } = require("../middlewares/validation");
 
 const router = express.Router();
 
 router.get("/", getArticles);
 
-router.use(auth);
-
 router.post("/", validateCreateArticles, createArticles);
 
 router.delete(
   "/:articleId",
-  celebrate({
-    params: Joi.object().keys({
-      articleId: Joi.string().hex().length(24).required(),
-    }),
-  }),
+  validateId,
+
   deleteArticle
 );
 

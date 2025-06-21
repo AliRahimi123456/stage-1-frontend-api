@@ -3,17 +3,17 @@ import "../../blocks/RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({ onClose, onRegister, isOpen, onLogInClick }) => {
-  const [username, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const isValid =
-    username.trim() !== "" && email.trim() !== "" && password.trim() !== "";
+    name.trim() !== "" && email.trim() !== "" && password.trim() !== "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(onRegister);
-    onRegister({ username, email, password });
+    onRegister({ name, email, password });
   };
   return (
     <ModalWithForm
@@ -46,13 +46,13 @@ const RegisterModal = ({ onClose, onRegister, isOpen, onLogInClick }) => {
         />
       </label>
       <label className="modal__label">
-        UserName
+        Name
         <input
           className="modal__input"
           type="name"
-          placeholder="UserName"
-          value={username}
-          onChange={(e) => setUserName(e.target.value)}
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
         />
       </label>

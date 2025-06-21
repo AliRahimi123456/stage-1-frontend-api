@@ -10,9 +10,9 @@ const userSchema = new mongoose.Schema(
     //   minlength: 2,
     //   maxlength: 30,
     // },
-    username: {
+    name: {
       type: String,
-      required: [true, "The username is required"],
+      required: [true, "The name is required"],
       minlength: 3,
       maxlength: 30,
       match: [/^[a-zA-Z0-9_]+$/, "Username must be alphanumeric"],

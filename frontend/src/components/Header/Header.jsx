@@ -61,7 +61,7 @@ function Header({
                 }`}
                 onClick={handleLogout}
               >
-                {currentUser.username}
+                {currentUser.name}
                 <img
                   className="header__signout-icon"
                   src={isHome ? logouticonwhite : logouticon}

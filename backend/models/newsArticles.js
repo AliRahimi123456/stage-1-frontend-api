@@ -29,7 +29,7 @@ const newsArticleSchema = new mongoose.Schema({
       message: "Link is not valid",
     },
   },
-  author: {
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,

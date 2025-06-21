@@ -27,7 +27,7 @@ const validateCreateArticles = celebrate({
 // 2. Validate user body when a user is created (signup)
 const validateUserBody = celebrate({
   [Segments.BODY]: Joi.object().keys({
-    username: Joi.string().min(4).max(45).messages({
+    name: Joi.string().min(4).max(45).messages({
       "string.empty": 'The "usernanme" field must be filled in',
       "string.uri": 'The "usernanme" field must be a valid URL',
     }),
@@ -38,6 +38,14 @@ const validateUserBody = celebrate({
     password: Joi.string().required().messages({
       "string.empty": 'The "password" field must be filled in',
     }),
+  }),
+});
+const validateSignup = celebrate({
+  body: Joi.object().keys({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required(),
+
+    name: Joi.string().min(3).max(35).required(),
   }),
 });
 
@@ -57,7 +65,7 @@ const validateLogin = celebrate({
 // 4. Validate item/user ID (hexadecimal, 24 characters)
 const validateId = celebrate({
   [Segments.PARAMS]: Joi.object().keys({
-    id: Joi.string().hex().length(24).required().messages({
+    articleId: Joi.string().hex().length(24).required().messages({
       "string.hex": 'The "id" must be a valid hexadecimal string',
       "string.length": 'The "id" must be 24 characters long',
       "any.required": 'The "id" field is required',
@@ -70,4 +78,5 @@ module.exports = {
   validateUserBody,
   validateLogin,
   validateId,
+  validateSignup,
 };

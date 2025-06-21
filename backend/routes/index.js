@@ -1,36 +1,28 @@
 const express = require("express");
 const { celebrate, Joi } = require("celebrate");
 const auth = require("../middlewares/auth");
-const newsArticles = require(".././routes/newsArticles");
-const userRoutes = require("../routes/users");
+const newsArticles = require("./newsArticles");
+const userRoutes = require("./users");
 const NotFoundError = require("../errors/not-found-error");
+const { validateLogin, validateSignup } = require("../middlewares/validation");
 
 const router = express.Router();
 
 router.post(
   "/signin",
-  celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().email().required(),
-      password: Joi.string().min(6).required(),
-    }),
-  }),
+  validateLogin,
+
   require("../controllers/users").login
 );
 router.post(
   "/signup",
-  celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().email().required(),
-      password: Joi.string().min(6).required(),
+  validateSignup,
 
-      username: Joi.string().min(3).max(35).required(),
-    }),
-  }),
   require("../controllers/users").createUser
 );
-router.use("/articles", newsArticles);
 router.use(auth);
+
+router.use("/articles", newsArticles);
 router.use("/users", userRoutes);
 
 router.use((req, res, next) => {
